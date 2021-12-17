@@ -8,11 +8,11 @@ For the AMA to provide you actionable data in Azure Monitor or Sentinel, it requ
 These instructions will show you how to create an Azure Policy/Initiative that will continuously evaluate if your new Azure Arc VMs have the agent installed and the associated DCR. This will only showcase the Windows use case, but the JSON can be replicated, and resource values can be changed to Linux values to obtain similar telemetry on Linux machines.
 
 ## Prerequisites
-Role Based Access: Resource Policy Contributor, Owner or Contributor (_Be sure to only apply roles that provide you the least amount of privilege required for your role. Owner and Contributor provide heightened access and should be seldomly applied unless the user is an administrator of Azure or certain resource groups._)
+**Role Based Access**: Resource Policy Contributor, Owner or Contributor (_Be sure to only apply roles that provide you the least amount of privilege required for your role. Owner and Contributor provide heightened access and should be seldomly applied unless the user is an administrator of Azure or certain resource groups._)
 
-Resource Properties: At the subscription level, in the Resource Properities tab make sure "Microsoft.HybridCompute, Microsoft.HybridConnectivity" are registered
+**Resource Properties**: At the subscription level, in the Resource Properities tab make sure "Microsoft.HybridCompute, Microsoft.HybridConnectivity" are registered
 
-VM Access: The easiest way I have found to test this policy is to install the ARC agent on an on-prem or other cloud test or dev server using the instructions in the Azure Arc console. Another alternative would be to stand up a low scale VM on your workstation through Hyper-V. You can follow this video as a guide here. This will require you to ensure it has internet access to the following sites and TLS 1.2 is enabled
+**VM Access**: The easiest way I have found to test this policy is to install the ARC agent on an on-prem or other cloud test or dev server using the instructions in the Azure Arc console. Another alternative would be to stand up a low scale VM on your workstation through Hyper-V. You can follow this video as a guide here. This will require you to ensure it has internet access to the following sites and TLS 1.2 is enabled
 
 ## Instructions
 Make sure that the Azure Arc agent is running on the machine prior to assigning the policy. In order to enable the agent you can follow these instructions here.
