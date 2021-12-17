@@ -26,12 +26,10 @@ The easiest way I have found to test this policy is to install the ARC agent on 
 
 ## Additions
 If you would like to use the policy to enforce more granular control you can add in different parameters into the policy rule.  An example of this would be to include:
-          {
           
-            "field": "name",
-            
-            "like": "xxxx*"
-            
+          {
+             "field": "name",
+             "like": "xxxx*"
           },
           
  
