@@ -13,7 +13,7 @@ Resource Policy Contributor, Owner or Contributor RBAC access. Be sure to only a
 ## Instructions
 Make sure that the Azure Arc agent is running on the machine prior to assigning the policy. In order to enable the agent you can follow these instructions here.
 
-In Azure Policy, create a new Definition that will review the Azure Arc enabled server validate whether the agent is present and if it is not it will remediate automatically. Copy and paste the .json file into your new policy. There is no parameters that need to be elected for this policy. 
+In Azure Policy, create a new Definition that will review the Azure Arc enabled server validate whether the agent is present and if it is not it will remediate automatically. Copy and paste the Azure-Arc-AMA-Deployment.json file into your new policy. There is no parameters that need to be elected for this policy. 
 
 Additionally, create a separate policy that will recognize if the associated data collection rules are applied to the Azure Arc enabled server. Copy and paste this .json file to your new policy definition. Under parameters you will need to declare the DCR Resource ID parameter. This allows the rule to associate the right DCR rule to this server. You can find this string by going to the DRC rule in the Azure Monitor blade, clicking on JSON view, copying the Resource ID and pasting it in the DCR Resource ID field back on your policy screen.
 
