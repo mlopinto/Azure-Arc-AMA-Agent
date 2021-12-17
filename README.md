@@ -29,8 +29,8 @@ If you would like to use the policy to enforce more granular control you can add
           
           {
              "field": "name",
-             "like": "xxxx*"
+             "like": "WIN*"
           },
           
+ In this instance, you can declare that the policy enforces when the name of the Azure Arc enabled server starts with "WIN".
  
-
