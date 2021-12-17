@@ -15,11 +15,19 @@ Make sure that the Azure Arc agent is running on the machine prior to assigning 
 
 In Azure Policy, create a new Definition that will review the Azure Arc enabled server validate whether the agent is present and if it is not it will remediate automatically. Copy and paste the Azure-Arc-AMA-Deployment.json file into your new policy. There is no parameters that need to be elected for this policy. 
 
-Additionally, create a separate policy that will recognize if the associated data collection rules are applied to the Azure Arc enabled server. Copy and paste this .json file to your new policy definition. Under parameters you will need to declare the DCR Resource ID parameter. This allows the rule to associate the right DCR rule to this server. You can find this string by going to the DRC rule in the Azure Monitor blade, clicking on JSON view, copying the Resource ID and pasting it in the DCR Resource ID field back on your policy screen.
+Additionally, create a separate policy that will recognize if the associated data collection rules are applied to the Azure Arc enabled server. Copy and paste this AMA-DCR-Deployment.json file to your new policy definition. Under parameters you will need to declare the DCR Resource ID parameter. This allows the rule to associate the right DCR rule to this server. You can find this string by going to the DRC rule in the Azure Monitor blade, clicking on JSON view, copying the Resource ID and pasting it in the DCR Resource ID field back on your policy screen.
 
 Once the two rules are created, you can collapse those into an initiative and assign the initiative to the Resource Group where the Azure Arc enabled servers lives. Or you can assign them individually to the resource group.
 
 To validate, allow the policies to run over night or you can manually trigger a review by opening up the CLI and running "az policy state trigger-scan".
 
 ## Validation
-The easiest way I have found to test this policy is to install the ARC agent on an on-prem or other cloud test or dev server using the instructions in the Azure Arc console. Another alternative would be to stand up a low scale VM on your workstation through Hyper-V. You can follow this video as a guide here. This will require you to ensure it has internet access to the following sites
+The easiest way I have found to test this policy is to install the ARC agent on an on-prem or other cloud test or dev server using the instructions in the Azure Arc console. Another alternative would be to stand up a low scale VM on your workstation through Hyper-V. You can follow this video as a guide here. This will require you to ensure it has internet access to the following sites.
+
+## Additions
+If you would like to use the policy to enforce more granular control you can add in different parameters into the policy rule. Some examples of this would be include:
+          {
+            "field": "name",
+            "like": "WIN-DB*"
+          },
+
