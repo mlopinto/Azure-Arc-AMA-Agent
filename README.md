@@ -10,12 +10,12 @@ These instructions will show you how to create an Azure Policy/Initiative that w
 ## Prerequisites
 **Role Based Access**: Resource Policy Contributor, Owner or Contributor (_Be sure to only apply roles that provide you the least amount of privilege required for your role. Owner and Contributor provide heightened access and should be seldomly applied unless the user is an administrator of Azure or certain resource groups._)
 
-**Resource Properties**: At the subscription level, in the Resource Properities tab make sure "Microsoft.HybridCompute, Microsoft.HybridConnectivity" are registered. You will experience an error in the deployment of your ARC agent if this is not enabled.
+**Resource Properties**: At the subscription level, in the Resource Properities tab make sure "Microsoft.HybridCompute, Microsoft.GuestConfiguration" are registered. You will experience an error in the deployment of your ARC agent if this is not enabled.
 
 **VM Access**: The easiest way I have found to test this policy is to install the ARC agent on an on-prem or other cloud test or dev server using the instructions in the Azure Arc console. Another alternative would be to stand up a low scale VM on your workstation through Hyper-V. You can follow this video as a guide here. This will require you to ensure it has internet access to the following sites and TLS 1.2 is enabled
 
 ## Instructions
-Make sure that the Azure Arc agent is running on the machine prior to assigning the policy. In order to enable the agent you can follow these instructions here.
+Make sure that the Azure Arc agent is running on the machine prior to assigning the policy. In order to enable the agent you can follow these instructions here<https://docs.microsoft.com/en-us/azure/azure-arc/servers/agent-overview>.
 
 In Azure Policy, create a new Definition that will review the Azure Arc enabled server validate whether the agent is present and if it is not it will remediate automatically. Copy and paste the Azure-Arc-AMA-Deployment.json file into your new policy. There is no parameters that need to be elected for this policy but the remediation task should be created so it automatically applies the agent. If you forget this step, the policy will still evaluate the VM but not apply the AMA agent requiring manual intervention. 
 
