@@ -20,3 +20,6 @@ Additionally, create a separate policy that will recognize if the associated dat
 Once the two rules are created, you can collapse those into an initiative and assign the initiative to the Resource Group where the Azure Arc enabled servers lives. Or you can assign them individually to the resource group.
 
 To validate, allow the policies to run over night or you can manually trigger a review by opening up the CLI and running "az policy state trigger-scan".
+
+## Validation
+The easiest way I have found to test this policy is to install the ARC agent on an on-prem or other cloud test or dev server using the instructions in the Azure Arc console. Another alternative would be to stand up a low scale VM on your workstation through Hyper-V. You can follow this video as a guide here. This will require you to ensure it has internet access to the following sites
