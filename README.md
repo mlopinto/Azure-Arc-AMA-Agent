@@ -10,7 +10,7 @@ These instructions will show you how to create an Azure Policy/Initiative that w
 ## Prerequisites
 Resource Policy Contributor, Owner or Contributor RBAC access. Be sure to only apply roles that provide you the least amount of privilege required for your role. Owner and Contributor provide heightened access and should be seldomly applied unless the user is an administrator of Azure or certain resource groups.
 
-## Instruction
+## Instructions
 Make sure that the Azure Arc agent is running on the machine prior to assigning the policy. In order to enable the agent you can follow these instructions here.
 
 In Azure Policy, create a new Definition that will review the Azure Arc enabled server validate whether the agent is present and if it is not it will remediate automatically. Copy and paste the .json file into your new policy. There is no parameters that need to be elected for this policy. 
