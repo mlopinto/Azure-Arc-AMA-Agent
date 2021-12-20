@@ -8,7 +8,7 @@ For the AMA to provide you actionable data in Azure Monitor or Sentinel, it requ
 These instructions will show you how to create an Azure Policy/Initiative that will continuously evaluate if your new Azure Arc VMs have the agent installed and the associated DCR. This will only showcase the Windows use case, but the JSON can be replicated, and resource values can be changed to Linux values to obtain similar telemetry on Linux machines. 
 
 ## Prerequisites
-**Role Based Access**: Resource Policy Contributor, Owner or Contributor (_Be sure to only apply roles that provide you the least amount of privilege required for your role. Owner and Contributor provide heightened access and should be seldomly applied unless the user is an administrator of Azure or certain resource groups._) The most important role is the Resource Policy Contributor so that these policies can be constructed.
+**Role Based Access**: Resource Policy Contributor, Owner or Contributor (_Be sure to only apply roles that provide you the least amount of privilege required for your role. Owner and Contributor provide heightened access and should be seldomly applied unless the user is an administrator of Azure or certain resource groups._) 
 
 **Resource Properties**: At the subscription level, in the Resource Properities tab make sure "Microsoft.HybridCompute, Microsoft.GuestConfiguration" are registered. You will experience an error in the deployment of your ARC agent if this is not enabled.
 
@@ -43,3 +43,5 @@ If you would like to use the policy to enforce more granular control you can add
           
 In this instance, you can declare that the policy enforces when the name of the Azure Arc enabled server starts with "WIN". This way you can leverage more granular rules for your mission critical applications and more generic logging for your less ciritical applications allowing you to customize and optimize cost.
  
+### Contact Me
+If you found this vauable or would like to interate additions to policy, please contact me. 

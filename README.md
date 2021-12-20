@@ -43,3 +43,5 @@ If you would like to use the policy to enforce more granular control you can add
           
 In this instance, you can declare that the policy enforces when the name of the Azure Arc enabled server starts with "WIN". This way you can leverage more granular rules for your mission critical applications and more generic logging for your less ciritical applications allowing you to customize and optimize cost.
  
+### Contact Me
+If you found this vauable or would like to interate additions to policy, please contact me. 
